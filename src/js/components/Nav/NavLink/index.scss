@@ -1,0 +1,13 @@
+.root {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  line-height: 1;
+  color: #666;
+  &:hover {
+    color: #1abc9c;
+  }
+}
