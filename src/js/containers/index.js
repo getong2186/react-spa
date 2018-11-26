@@ -1,14 +1,14 @@
 export {default as App} from './App'
 
 // 简单
-export { default as Home } from './Home'
+export { default as Login } from './Login'
 
 // 一般
-export { default as Coupon } from './Coupon'
-export { default as CouponDetail } from './Coupon/Detail'
+export { default as Homepage } from './Homepage'
+export { default as HomepageDetail } from './Homepage/Detail'
 
 // 复杂
-export { default as Tour } from './Tour'
+export { default as Swa } from './Swa'
 
 // 异步
 export { default as User } from './User'

@@ -203,6 +203,7 @@ a {
   max-width: 10rem;
   margin-left: auto;
   margin-right: auto;
+  // padding-top: 1.32rem;
 }
 
 // 半透明弹层
@@ -300,7 +301,7 @@ img {
 }
 
 // 这里主要应付 antd-mobile 的组件carousel 不能等比缩放的蛋疼问题
-.home-swipe {
+.login-swipe {
   height: 40.625vw;
   max-height: 406.25px;
 }
@@ -432,6 +433,10 @@ img {
 .minheight110 {
   min-height: 110%;
 }
+
+// .box {
+//   margin-top: 55px;
+// }
 
 // flex 参考指南。http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
 // 任何一个容器都可以指定 flex 布局

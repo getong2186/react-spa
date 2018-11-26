@@ -6,7 +6,7 @@ import { Nav, Todos } from '../../components'
 
 import * as TodoActions from '../../actions/TodoActions'
 
-const Tour = ({todos, showCongratulation, actions}) => (
+const Swa = ({todos, showCongratulation, actions}) => (
   <div className="box relative">
     <div
       style={{
@@ -38,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Tour)
+)(Swa)

@@ -1,0 +1,55 @@
+:global {
+  .am-wingblank{
+    margin: 0 !important;
+  }
+
+  .card-pack {
+    position: relative;
+    margin-top: -2.69rem;
+    padding-bottom: 0.2416rem;
+    .card {
+      background:#ffffff;
+      box-shadow:0 0.1208rem 0.28992rem 0 rgba(0,0,0,0.06);
+      border-radius: 0.2416rem;
+      margin: 0.169rem 0.289rem 0 0.289rem;
+      padding: 0.338rem;
+
+      h3 {
+        text-align: left;
+        padding-left: 0.338rem;
+        position: relative;
+        font-size: 0.41rem;
+        color:#303030;
+        // border-left: 6px #2e43ff solid;
+      }
+      h3:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -0.07rem;
+        top: 0.07rem;
+        background-image:linear-gradient(-225deg, #4da9ff 0%, #2e43ff 100%);
+        border-radius: 0.555rem;
+        width: 0.14rem;
+        height:0.41rem;
+      }
+      .linkitems {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+
+        .linkitem-icon {
+          img {
+            width: 100%;
+          }
+          p {
+            text-align: center;
+          }
+        }
+        a {
+          width: 2.1744rem;
+        }
+      }
+    }
+  }
+}

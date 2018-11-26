@@ -5,14 +5,14 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as TimerActions from 'app/actions/TimerActions'
 
-class Home extends Component {
+class Login extends Component {
 	render() {
 		const { state, actions } = this.props
 		return (
       <div className="box">
 	  	{/* <Header/> */}
         <Timer {...state} {...actions} />
-        <Nav/>
+        {/* <Nav/> */}
       </div>
 		)
 	}
@@ -29,4 +29,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Home)
+)(Login)

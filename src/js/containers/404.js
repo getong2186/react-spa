@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-export default class Tour extends Component {
+export default class Swa extends Component {
   render() {
     return (
       <div className="center-center-column" style={{height: '100vh'}}>
