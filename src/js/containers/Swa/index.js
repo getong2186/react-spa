@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { hashHistory } from 'react-router';
 import styles from './index.scss';
 
 import { Nav, Header } from '../../components'
@@ -88,7 +89,7 @@ class Swa extends Component {
                 <span>{app.name}</span>
               </div>
               <div className="setting">
-                <div v-show="!app.type" className="setting-not">未配置</div>
+                <div v-show="!app.type" className="setting-not" >未配置</div>
                 {/* <div v-show="app.type" className="setting-done">已配置</div> */}
               </div>
             </div>

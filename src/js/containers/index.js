@@ -9,6 +9,7 @@ export { default as HomepageDetail } from './Homepage/Detail'
 
 // 复杂
 export { default as Swa } from './Swa'
+export { default as SwaDetail } from './Swa/Detail'
 
 // 异步
 export { default as User } from './User'

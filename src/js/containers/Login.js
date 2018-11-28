@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as TimerActions from 'app/actions/TimerActions'
-import { Button, WhiteSpace, WingBlank, List, InputItem } from 'antd-mobile';
 import { browserHistory } from 'react-router'
-import styles from './login.scss'
 
-class Login extends Component {
+// 逻辑和redux业务功能
+import * as TimerActions from 'app/actions/TimerActions'
+
+// 第三方组件和自己封装组件
+import { Button, InputItem } from 'antd-mobile';
+
+// 样式
+import './login.scss'
+
+class Login extends React.Component {
+
+	constructor (props) {
+        super(props);
+	}
+	
 	componentDidMount() {
 	// this.autoFocusInst.focus();
 	}
@@ -16,36 +27,34 @@ class Login extends Component {
 	}
 
 	render() {
-		// const { getFieldProps } = this.props.form;
+		const { state, actions } = this.props;
+
 		return (
 			<div className="login">
-				<WingBlank>
-					<header>
-						<img src={require(`./imgs/logo.png`)} alt="icon"/>
-					</header>
-					<div className="content">
-						<InputItem
-							editable="{true}"
-							clear
-							placeholder="请输入邮箱 / 手机号"
-							ref={el => this.autoFocusInst = el}
-						></InputItem>
-						<InputItem
-							className="inputItem"
-							editable="{true}"
-							clear
-							placeholder="请输入密码"
-							ref={el => this.inputRef = el}
-						></InputItem>
-					</div>
-					
-					<div className="login-submit">
-						<Button type="primary" onClick={this.handleClick}>登录</Button><WhiteSpace />
-						<p>
-							<a href="javascript:void(0);">手动设置服务器地址</a>
-						</p>
-					</div>
-				</WingBlank>
+				<header>
+					<img src={require(`./imgs/logo.png`)} alt="icon"/>
+				</header>
+				<div className="content">
+					<InputItem
+						editable="{true}"
+						clear
+						placeholder="请输入邮箱 / 手机号"
+						ref={el => this.autoFocusInst = el}
+					></InputItem>
+					<InputItem
+						className="inputItem"
+						editable="{true}"
+						clear
+						placeholder="请输入密码"
+						ref={el => this.inputRef = el}
+					></InputItem>
+				</div>			
+				<div className="login-submit">
+					<Button type="primary" onClick={this.handleClick}>登录</Button>
+					<p>
+						<a href="javascript:void(0);">手动设置服务器地址</a>
+					</p>
+				</div>
 			</div>
 		)
 	}

@@ -7,6 +7,7 @@ import {
   Homepage,
   HomepageDetail,
   Swa,
+  SwaDetail,
   User,
   NotFoundPage,
 } from './containers'
@@ -18,7 +19,10 @@ export default (
       <IndexRoute component={Homepage}/>
       {/* <Route path=":id" component={HomepageDetail}/> */}
     </Route>
-    <Route path="swa" component={Swa}/>
+    <Route path="swa">
+      <IndexRoute component={Swa}/>
+      <Route path=":id" component={SwaDetail}/>
+    </Route>
     <Route path="user" component={User}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>
