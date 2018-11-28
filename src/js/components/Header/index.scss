@@ -15,11 +15,15 @@
       padding: 0 0.1308rem;
     }
   }
+  .am-navbar-right {
+    margin-right: 10px;
+  }
   .am-navbar-right img{
     vertical-align: middle;
   }
   .am-popover-item-container {
     height: 0.94rem !important;
+    padding: 0 !important;
   }
   .search {
     display: inline-block;
@@ -61,7 +65,9 @@
     display: inline-block;
     width: 0.4832rem;
   }
-
+  .am-popover-arrow {
+    display: none;
+  }
   .banner{
     background: url("./imgs/banner.png") no-repeat;
     background-size: cover;

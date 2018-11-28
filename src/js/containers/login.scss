@@ -5,10 +5,22 @@
   .content {
     padding: 0 1.3288rem !important;
 
-    .inputItem {
-      .am-list-item.am-input-item:after {
-        display: none !important;
-      }
+    .am-input-item {
+      padding: 0;
+      height: 50px;
+      min-height: 44px;
+    }
+    .am-list-item.am-input-item:after {
+      display: none !important;
+    }
+    input {
+      height:26px;
+      font-size: 15px !important;
+    }
+    input::-webkit-input-placeholder {
+      font-size: 15px !important;
+      padding-left: 2px;
+      // line-height: 44px;
     }
   }
   header {    
@@ -21,7 +33,7 @@
   .login-submit {
     background: #ffffff;
     margin: 0px 1.3288rem;
-    margin-top: 1.3288rem;
+    margin-top: 40px;;
 
     .am-button {
       height: 40px;

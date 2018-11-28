@@ -84,7 +84,7 @@ class Swa extends Component {
           {this.state.applist.map(app => ( 
             <div className="card">
               <div className="app">
-                <img alt="" />
+                <img src={require(`./imgs/app-1.png`)} alt="" />
                 <span>{app.name}</span>
               </div>
               <div className="setting">
