@@ -561,7 +561,6 @@ class Homepage extends Component {
         data: ['bg', 'bg', 'bg'],
       });
     }, 100);
-    
   }
 
   render() {
@@ -585,7 +584,6 @@ class Homepage extends Component {
                     alt="{{val}}"
                     style={{ width: '100%', verticalAlign: 'top' }}
                     onLoad={() => {
-                      // fire window resize event to change height
                       window.dispatchEvent(new Event('resize'));
                       this.setState({ imgHeight: 'auto' });
                     }}

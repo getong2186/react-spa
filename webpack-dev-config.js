@@ -12,7 +12,7 @@ import autoprefixer from 'autoprefixer'
 import rucksackCss from 'rucksack-css'
 import px2rem from 'postcss-pxtorem';
 const px2remOpts = {
-  rootValue: 100,
+  rootValue: 37.5,
   propWhiteList: [],
 };
 

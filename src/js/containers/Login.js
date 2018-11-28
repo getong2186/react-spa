@@ -1,19 +1,52 @@
 import React, { Component } from 'react'
-import { Nav, Timer } from 'app/components'
-// import { Header } from 'app/components/Todos/Header'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as TimerActions from 'app/actions/TimerActions'
+import { Button, WhiteSpace, WingBlank, List, InputItem } from 'antd-mobile';
+import { browserHistory } from 'react-router'
+import styles from './login.scss'
 
 class Login extends Component {
+	componentDidMount() {
+	// this.autoFocusInst.focus();
+	}
+	handleClick = () => {
+		const path = `/homepage`
+		browserHistory.push(path);
+	}
+
 	render() {
-		const { state, actions } = this.props
+		// const { getFieldProps } = this.props.form;
 		return (
-      <div className="box">
-	  	{/* <Header/> */}
-        <Timer {...state} {...actions} />
-        {/* <Nav/> */}
-      </div>
+			<div className="login">
+				<WingBlank>
+					<header>
+						<img src={require(`./imgs/logo.png`)} alt="icon"/>
+					</header>
+					<div className="content">
+						<InputItem
+							editable="{true}"
+							clear
+							placeholder="请输入邮箱 / 手机号"
+							ref={el => this.autoFocusInst = el}
+						></InputItem>
+						<InputItem
+							className="inputItem"
+							editable="{true}"
+							clear
+							placeholder="请输入密码"
+							ref={el => this.inputRef = el}
+						></InputItem>
+					</div>
+					
+					<div className="login-submit">
+						<Button type="primary" onClick={this.handleClick}>登录</Button><WhiteSpace />
+						<p>
+							<a href="javascript:void(0);">手动设置服务器地址</a>
+						</p>
+					</div>
+				</WingBlank>
+			</div>
 		)
 	}
 }

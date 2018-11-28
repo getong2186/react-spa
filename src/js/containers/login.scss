@@ -1,0 +1,39 @@
+:global {
+  .am-wingblank {
+    background: #ffffff;
+  }
+  .content {
+    padding: 0 1.3288rem !important;
+
+    .inputItem {
+      .am-list-item.am-input-item:after {
+        display: none !important;
+      }
+    }
+  }
+  header {    
+    height: 3.624rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+  }
+  .login-submit {
+    background: #ffffff;
+    margin: 0px 1.3288rem;
+    margin-top: 1.3288rem;
+
+    .am-button {
+      height: 40px;
+      border-radius: 100px;
+      background-image:linear-gradient(90deg, #4da9ff 0%, #2e43ff 99%);
+      border: none;
+      font-size:16px;
+      line-height: 40px;
+    }
+    p {
+      text-align: right;
+      padding-top: 0.2416rem;
+    }
+  }
+}

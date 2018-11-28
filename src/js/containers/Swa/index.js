@@ -1,30 +1,104 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import styles from './index.scss';
 
-import { Nav, Todos } from '../../components'
+import { Nav, Header } from '../../components'
 
 import * as TodoActions from '../../actions/TodoActions'
 
-const Swa = ({todos, showCongratulation, actions}) => (
-  <div className="box relative">
-    <div
-      style={{
-        background: "rgb(86, 86, 86)",
-        padding: '0 0.4rem 1rem',
-        position:'fixed',
-        width: '100%',
-        left: 0,
-        top: 0,
-        bottom: 0
-      }}
-      className="center-center"
-    >
-      <Todos todos={todos} showCongratulation={showCongratulation} {...actions}/>
-    </div>
-    <Nav/>
-  </div>
-)
+class Swa extends Component {
+  state = {
+    applist: [
+      {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': true
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': true
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': true
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }, {
+          "id": "d28d1640-69c5-4",
+          "logoUrl": "http://ysp.redcore.cn/files/appiconlogos/5b041895e8152b75107a63b5/7d6ilrf3yxk.png",
+          "name": "oa",
+          'type': false
+      }
+    ]
+  }
+  render() {
+    const { counter, dispatch, asyncBool, asyncCountDown } = this.props
+    return (
+      <div className="box relative">
+        <Header />
+        <div className="banner-pack">
+        </div>
+        <div className="swa-card-pack">
+          {this.state.applist.map(app => ( 
+            <div className="card">
+              <div className="app">
+                <img alt="" />
+                <span>{app.name}</span>
+              </div>
+              <div className="setting">
+                <div v-show="!app.type" className="setting-not">未配置</div>
+                {/* <div v-show="app.type" className="setting-done">已配置</div> */}
+              </div>
+            </div>
+          ))}
+        </div>
+        <Nav/>
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = state => ({
   todos: state.todos,

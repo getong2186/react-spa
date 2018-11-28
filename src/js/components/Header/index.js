@@ -12,7 +12,7 @@ export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { title: '首页' };
+    this.state = { title: '首页', fontSize: '26px' };
     switch(browserHistory.getCurrentLocation().pathname) {
       case '/homepage':
         this.state.title = '首页';
@@ -25,13 +25,7 @@ export default class Header extends React.Component {
         break;
     } 
   };
-  state = {
-    visible: true,
-    selected: '',
-    fontSize: '16px;'
-  };
   onSelect = (opt) => {
-    // console.log(opt.props.value);
     this.setState({
       visible: false,
       selected: opt.props.value,
@@ -47,33 +41,25 @@ export default class Header extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', this.scrollHandler);
   }
-  // _handleScroll(scrollTop) {
-  //   console.log(scrollTop)         //滚动条距离页面的高度
-  // }
   handleScroll(event) {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     var bannerElement = document.getElementById("banner");
     var tittleElement = document.getElementById("tittle");
     bannerElement.style.opacity = scrollTop/100;
     if (scrollTop > 100) {
-      tittleElement.style.fontSize = '16px';
+      this.setState({
+        fontSize: '16px'
+      });
     } else {
-      tittleElement.style.fontSize = '26px';
+      this.setState({
+        fontSize: '26px'
+      });
     }
   }
 
   render() {
     return (
       <div>
-        {/* <header>
-          <div class="header-tittle" id="tittle">
-            <span>{this.state.title}</span>
-          </div>
-          <div class="right-icon">
-            <span >+</span>
-          </div>
-        </header> */}
-
         <NavBar
         mode="light"
         className="header"
@@ -111,8 +97,9 @@ export default class Header extends React.Component {
               alignItems: 'center',
             }}
             >
-            <span type="ellipsis" >+</span>
-              {/* <Icon type="ellipsis" /> */}
+            <span type="ellipsis" >
+              <img className="add" src={require(`./imgs/index-add.png`)} alt="icon"/>
+            </span>
             </div>
           </Popover>
         }
