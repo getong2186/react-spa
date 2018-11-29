@@ -13,12 +13,19 @@ export default class Header extends React.Component {
     switch(browserHistory.getCurrentLocation().pathname) {
       case '/homepage':
         this.state.title = '首页';
+        console.log(document.getElementsByClassName('am-navbar-right').style);
+        // document.getElementsByClassName('am-navbar-right').style.display = "flex";
         break;
       case '/swa':
         this.state.title = '密码管家'; 
+        console.log(document.getElementsByClassName('am-navbar-right'));
+        // if (document.getElementsByClassName('am-navbar-right')) {
+        //   document.getElementsByClassName('am-navbar-right').style.display = "none";
+        // }
         break;
       case '/user':
         this.state.title = '我的';
+        
         break;
     } 
   };
@@ -94,7 +101,7 @@ export default class Header extends React.Component {
               alignItems: 'center',
             }}
             >
-            <span type="ellipsis" >
+            <span type="ellipsis">
               <img className="add" src={require(`./imgs/index-add.png`)} alt="icon"/>
             </span>
             </div>

@@ -4,6 +4,7 @@ import { Route, IndexRoute } from 'react-router'
 import {
   App,
   Login,
+  LoginServer,
   Homepage,
   HomepageDetail,
   Swa,
@@ -15,6 +16,7 @@ import {
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Login}/>
+    <Route path="server" component={LoginServer}></Route>
     <Route path="homepage">
       <IndexRoute component={Homepage}/>
       {/* <Route path=":id" component={HomepageDetail}/> */}

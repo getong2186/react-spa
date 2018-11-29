@@ -26,4 +26,7 @@ export default {
                 })
         })
     },
+    sayHelle () {
+        console.log('say hello');
+    }
 }

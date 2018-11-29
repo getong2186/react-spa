@@ -1,0 +1,58 @@
+:global {
+  .login-server {
+    .back {
+      position: absolute;
+      top: 6px;
+      left: 15px;
+      padding: 10px;
+      font-size: 0.4rem;
+    }
+    header {    
+      height: 50px;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      font-size: 17px;
+      span: {
+        float: left;
+      }
+    }
+    .content {
+      padding: 0 1.3288rem !important;
+      margin-top: 80px;
+  
+      .am-input-item {
+        padding: 0;
+        height: 50px;
+        min-height: 44px;
+      }
+      .am-list-item.am-input-item:after {
+        display: none !important;
+      }
+      input {
+        height:26px;
+        font-size: 15px !important;
+      }
+      input::-webkit-input-placeholder {
+        font-size: 15px !important;
+        padding-left: 2px;
+        // line-height: 44px;
+      }
+    }
+
+    .login-submit {
+      background: #ffffff;
+      margin: 0px 1.3288rem;
+      margin-top: 40px;
+      .am-button {
+        height: 40px;
+        border-radius: 100px;
+        background-image:linear-gradient(90deg, #4da9ff 0%, #2e43ff 99%);
+        border: none;
+        font-size:16px;
+        line-height: 40px;
+      }
+    } 
+  }
+}

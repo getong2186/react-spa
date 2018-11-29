@@ -2,6 +2,7 @@ export {default as App} from './App'
 
 // 登录页
 export { default as Login } from './Login'
+export { default as LoginServer } from './Login/LoginServer'
 
 // 首页
 export { default as Homepage } from './Homepage'
