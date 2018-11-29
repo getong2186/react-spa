@@ -74,6 +74,18 @@ class Swa extends Component {
       }
     ]
   }
+
+   // 用户item的点击事件
+   swaListClick = (rowID) => {
+      console.log(rowID);
+      hashHistory.push({
+        pathname: 'groups',
+        query: {
+            'fromPage' : 'home'
+        }
+      });
+  }
+
   render() {
     const { counter, dispatch, asyncBool, asyncCountDown } = this.props
     return (
@@ -82,14 +94,14 @@ class Swa extends Component {
         <div className="banner-pack">
         </div>
         <div className="swa-card-pack">
-          {this.state.applist.map(app => ( 
+          {this.state.applist.map(app => (
             <div className="card">
               <div className="app">
                 <img src={require(`./imgs/app-1.png`)} alt="" />
                 <span>{app.name}</span>
               </div>
               <div className="setting">
-                <div v-show="!app.type" className="setting-not" >未配置</div>
+                <div v-show="!app.type" className="setting-not" onClick={this.swaListClick.bind(this, app.id)}>未配置</div>
                 {/* <div v-show="app.type" className="setting-done">已配置</div> */}
               </div>
             </div>

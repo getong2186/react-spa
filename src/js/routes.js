@@ -19,10 +19,11 @@ export default (
       <IndexRoute component={Homepage}/>
       {/* <Route path=":id" component={HomepageDetail}/> */}
     </Route>
-    <Route path="swa">
-      <IndexRoute component={Swa}/>
-      <Route path=":id" component={SwaDetail}/>
+    <Route path="swa" component={Swa}>
+      {/* <IndexRoute />
+      <Route path="swaDetail" component={SwaDetail}/> */}
     </Route>
+    <Route path="swaDetail" component={SwaDetail}></Route>
     <Route path="user" component={User}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>

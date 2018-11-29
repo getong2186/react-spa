@@ -12,6 +12,9 @@ import { Button, InputItem } from 'antd-mobile';
 // 样式
 import './login.scss'
 
+// 引入API
+import API from './service.js'
+
 class Login extends React.Component {
 
 	constructor (props) {
@@ -24,6 +27,10 @@ class Login extends React.Component {
 	handleClick = () => {
 		const path = `/homepage`
 		browserHistory.push(path);
+		// API.get_tbl_list().then(d => {
+		// 	console.log(11111);
+		// })
+		// console.log(API);
 	}
 
 	render() {

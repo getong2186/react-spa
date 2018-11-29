@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router';
 import { Popover, NavBar, Icon } from 'antd-mobile';
-import styles from './index.scss';
+import './index.scss';
 const Item = Popover.Item;
-
-// const myImg = src => <img src={`.imgs/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
-
-const myImg = src => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
 
 export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = { title: '首页', fontSize: '26px' };
     switch(browserHistory.getCurrentLocation().pathname) {
       case '/homepage':
@@ -69,15 +66,15 @@ export default class Header extends React.Component {
             overlayStyle={{ color: 'currentColor' }}
             visible={this.state.visible}
             overlay={[
-              (<Item key="4" value="scan" icon={myImg('icon_homepage_pop_search')} data-seed="logId">
+              (<Item key="4" value="search">
                 <span className="search"></span>
                 <span>搜索</span>
                 </Item>),
-              (<Item key="5" value="special" icon={myImg('icon_homepage_pop_scan')} style={{ whiteSpace: 'nowrap' }}>
+              (<Item key="5" value="scan">
                 <span className="scan"></span>
                 <span>扫一扫</span>
               </Item>),
-              (<Item key="6" value="button ct" icon={myImg('uQIYTFeRrjPELImDRrPt')}>
+              (<Item key="6" value="apps">
                 <span className="apps"></span>
                 <span>应用</span>
               </Item>),

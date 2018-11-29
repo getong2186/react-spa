@@ -1,7 +1,2 @@
 export { default as Nav } from './Nav'
-export { default as Counter } from './Counter'
-export { default as Todos } from './Todos'
-export { default as Timer } from './Timer'
 export { default as Header } from './Header'
-export { default as Post } from './Post'
-export { default as ScrollBox } from './ScrollBox'

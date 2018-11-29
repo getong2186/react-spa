@@ -1,17 +1,17 @@
 export {default as App} from './App'
 
-// 简单
+// 登录页
 export { default as Login } from './Login'
 
-// 一般
+// 首页
 export { default as Homepage } from './Homepage'
-export { default as HomepageDetail } from './Homepage/Detail'
 
-// 复杂
+// 密码管家
 export { default as Swa } from './Swa'
+// 密码管家配置页
 export { default as SwaDetail } from './Swa/Detail'
 
-// 异步
+// 我的
 export { default as User } from './User'
 
 // 404

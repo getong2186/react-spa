@@ -5,12 +5,12 @@ import { AppContainer } from 'react-hot-loader'
 import { browserHistory } from 'react-router'
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
-import rootSage from './sagas'
+// import rootSage from './sagas'
 
 import Redbox from 'redbox-react'
 const rootEl = document.getElementById('app');
-const store = configureStore(window.__INITIAL_STATE__)
-store.runSaga(rootSage)
+const store = configureStore()
+// store.runSaga(rootSage)
 
 render(
   <AppContainer errorReporter={Redbox}>
