@@ -18,12 +18,20 @@ import './index.scss'
 class Login extends React.Component {
 
 	constructor (props) {
-        super(props);
+		super(props);
+		this.state = {
+			server: 'http://'
+		}
+	}
+
+	serverChangeHandle = (value) => {
+		this.setState({
+            server: value
+        })
 	}
 
 	render() {
-		const { state, actions } = this.props;
-
+		// const { state, actions } = this.props;
 		return (
 			<div className="login-server">
 				<span className="back">
@@ -38,12 +46,11 @@ class Login extends React.Component {
 						editable="{true}"
 						clear
 						placeholder="请输入邮箱 / 手机号"
-						ref={el => this.autoFocusInst = el}
+						value={this.state.server}
+						onChange={this.serverChangeHandle}
 					></InputItem>
 				</div>
 				
-				
-
 				<div className="login-submit">
 					<Button type="primary" onClick={this.handleClick}>登录</Button>
 				</div>

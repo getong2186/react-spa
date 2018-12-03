@@ -18,28 +18,35 @@ import API from './service.js'
 class Login extends React.Component {
 
 	constructor (props) {
-        super(props);
+		super(props);
+		this.state = {
+			height: document.documentElement.clientHeight,
+			username: '',
+			password: ''
+		}
 	}
-	state = {
-		height: document.documentElement.clientHeight
+	userNameChangeHandle = (value) => {
+		this.setState({
+            username: value
+        })
 	}
-	componentDidMount() {
-	// this.autoFocusInst.focus();
-	}
+	passwordChangeHandle = (value) => {
+		this.setState({
+            password: value
+        })
+    }
 	handleClick = () => {
 		const path = `/homepage`
 		browserHistory.push(path);
 
 		// API.sayHelle();
 		// API.get_tbl_list().then(d => {
-		// 	console.log(11111);
+			console.log(this.state);
 		// })
 		// console.log(API);
 	}
 
 	render() {
-		const { state, actions } = this.props;
-
 		return (
 			<div className="login">
 				<header>
@@ -50,14 +57,16 @@ class Login extends React.Component {
 						editable="{true}"
 						clear
 						placeholder="请输入邮箱 / 手机号"
-						ref={el => this.autoFocusInst = el}
+						value={this.state.username}
+						onChange={this.userNameChangeHandle}
 					></InputItem>
 					<InputItem
 						className="inputItem"
 						editable="{true}"
 						clear
 						placeholder="请输入密码"
-						ref={el => this.inputRef = el}
+						value={this.state.password}
+						onChange={this.passwordChangeHandle}
 					></InputItem>
 				</div>			
 				<div className="login-submit">
