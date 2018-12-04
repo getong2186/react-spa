@@ -5,17 +5,6 @@ import { ScrollBox } from 'app/components'
 import ReactIScroll from 'react-iscroll'
 import iScroll from 'iscroll/build/iscroll-probe'
 
-const options = {
-  click: true,
-  scrollX: true
-}
-
-const optionsList = {
-  click: true,
-  scrollY: true,
-  scrollbars: true,
-}
-
 export default class Detail extends Component {
   state = {
     focus: 0,
