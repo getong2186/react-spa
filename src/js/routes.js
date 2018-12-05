@@ -10,6 +10,8 @@ import {
   Swa,
   SwaDetail,
   User,
+  UserPersonalCenter,
+  UserChangePassword,
   NotFoundPage,
 } from './containers'
 
@@ -33,6 +35,11 @@ export default (
       
       {/* 我的 */}
       <Route path="user" component={User}/>
+      {/* 个人中心 */}
+      <Route path="userPersonalCenter" component={UserPersonalCenter}/>
+      {/* 修改密码 */}
+      <Route path="userChangePassword" component={UserChangePassword}/>
+      
       
       {/* 404 */}
       <Route path="*" component={NotFoundPage}/>

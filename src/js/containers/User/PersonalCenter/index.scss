@@ -1,0 +1,78 @@
+:global {
+  .personal-center {
+    .back {
+      color: #fff;
+    }
+    header {    
+      height: 50px;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      background: #2e43ff;
+      color: #fff;
+      font-size: 17px;
+      span: {
+        float: left;
+      }
+    }
+
+    .person-pack {
+      background-image: url(./imgs/bg.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      justify-content: space-between;
+      .person {
+        // background:#ffffff;
+        border-radius:10px;
+        margin: 20px 15px 20px 15px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        img {
+          width: 50px;
+          height: 50px;
+          border: 1px solid #ffffff;
+          border-radius: 100%;
+        }
+        .message {
+          color:#fff;
+          h3 {
+            font-size:18px;
+            text-align: left;
+          }
+          padding: 25px 10px;
+        }
+      }
+    }
+
+    .head-portrait {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 20px;
+      color: #ffffff;
+    }
+    
+    .person-message {
+      .am-list-content, .am-list-extra {
+        font-size: 16px;
+        padding: 0px;
+      }
+
+      .am-list-body {
+        border: none;
+      }
+      .am-list-item, .am-list-line {
+        min-height: 50px;
+        height: 50px;
+      }
+      .list-email {
+        border-top: 1px #ccc solid;
+      }
+      .change-password {
+        margin-top: 20px;
+      }
+    }
+  }
+}

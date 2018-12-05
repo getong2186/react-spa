@@ -16,6 +16,10 @@ export { default as SwaDetail } from './Swa/Detail'
 
 // 我的
 export { default as User } from './User'
+// 个人中心
+export { default as UserPersonalCenter } from './User/PersonalCenter'
+// 修改密码
+export { default as UserChangePassword } from './User/ChangePassword'
 
 // 404
 export { default as NotFoundPage } from './404.js'

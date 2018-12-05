@@ -1,30 +1,26 @@
 :global {
-  .login-server {
-    background: #ffffff;
-    height: 100%;
+  .change-password {
     .back {
-      position: absolute;
-      top: 6px;
-      left: 15px;
-      padding: 10px;
-      font-size: 0.4rem;
+      color: #fff;
     }
     header {    
       height: 50px;
       display: flex !important;
       justify-content: center;
       align-items: center;
-      background: #ffffff;
-      font-size:17px;
-      color:#303030;
+      background: #2e43ff;
+      color: #fff;
+      font-size: 17px;
       span: {
         float: left;
       }
     }
     .content {
-      padding: 0 1.3288rem !important;
-      margin-top: 80px;
-  
+      >p {
+        height: 40px;
+        line-height: 40px;
+        padding-left: 15px;
+      }
       .am-list-item.am-input-item:after {
         display: none !important;
       }
@@ -35,7 +31,6 @@
       input::-webkit-input-placeholder {
         font-size: 15px !important;
         padding-left: 2px;
-        // line-height: 44px;
       }
       .am-input-clear {
         width: 20px;
@@ -47,20 +42,20 @@
         align-items: center;
       }
       .am-input-item {
-        min-height: 35px;
-        height: 35px;
-        padding: 0;
+        padding: 0px 15px;
+        min-height: 45px;
+        height: 45px;
         border-bottom: 1px #ccc solid;
-        margin: 15px 0;
+        margin-bottom: 10px;
+        border: none;
       }
       .am-input-focus {
         border-bottom: 1px #A4C5FF solid;
-      }
+      } 
     }
-    .login-submit {
-      background: #ffffff;
-      margin: 0px 1.3288rem;
-      margin-top: 40px;
+    .submit-pack {
+      text-align: center;
+      margin-top: 20px;
       .am-button {
         height: 40px;
         border-radius: 100px;
@@ -68,7 +63,9 @@
         border: none;
         font-size:16px;
         line-height: 40px;
+        // margin: 10px;
+        width: 90%;
       }
-    } 
+    }
   }
 }
