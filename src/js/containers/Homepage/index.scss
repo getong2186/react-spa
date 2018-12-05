@@ -3,9 +3,12 @@
     margin: 0 !important;
   }
 
+  .homepage-banner {
+    margin-top: -30px;
+  }
   .card-pack {
     position: relative;
-    margin-top: -2.69rem;
+    margin-top: -2.9rem;
     padding-bottom: 0.2416rem;
     .card {
       background:#ffffff;
@@ -39,8 +42,11 @@
         flex-wrap: wrap;
 
         .linkitem-icon {
+          text-align: center;
+          padding: 10px 0;
           img {
-            width: 100%;
+            width: 50px;
+            max-height: 50px;
           }
           p {
             text-align: center;

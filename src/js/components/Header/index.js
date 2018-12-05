@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { Popover, NavBar, Icon } from 'antd-mobile';
 import './index.scss';
 const Item = Popover.Item;
@@ -8,33 +8,31 @@ export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
-    this.state = { title: '首页', fontSize: '26px' };
-    switch(browserHistory.getCurrentLocation().pathname) {
+    this.state = { visible: false, title: '首页', fontSize: '26px' };
+    switch(hashHistory.getCurrentLocation().pathname) {
       case '/homepage':
         this.state.title = '首页';
-        console.log(document.getElementsByClassName('am-navbar-right').style);
-        // document.getElementsByClassName('am-navbar-right').style.display = "flex";
         break;
       case '/swa':
         this.state.title = '密码管家'; 
-        console.log(document.getElementsByClassName('am-navbar-right'));
-        // if (document.getElementsByClassName('am-navbar-right')) {
-        //   document.getElementsByClassName('am-navbar-right').style.display = "none";
-        // }
         break;
       case '/user':
         this.state.title = '我的';
-        
         break;
     } 
   };
+
   onSelect = (opt) => {
     this.setState({
       visible: false,
       selected: opt.props.value,
     });
+    if (opt.props.value == 'search') {
+      let path = `/homepageSearch`
+		  hashHistory.push(path);
+    }
   };
+  
   handleVisibleChange = (visible) => {
     this.setState({
       visible,
@@ -45,10 +43,11 @@ export default class Header extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', this.scrollHandler);
   }
+  
   handleScroll(event) {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     var bannerElement = document.getElementById("banner");
-    var tittleElement = document.getElementById("tittle");
+    // var tittleElement = document.getElementById("tittle");
     bannerElement.style.opacity = scrollTop/100;
     if (scrollTop > 100) {
       this.setState({
@@ -83,7 +82,7 @@ export default class Header extends React.Component {
               </Item>),
               (<Item key="6" value="apps">
                 <span className="apps"></span>
-                <span>应用</span>
+                <span>应用管理</span>
               </Item>),
             ]}
             align={{
@@ -101,7 +100,7 @@ export default class Header extends React.Component {
               alignItems: 'center',
             }}
             >
-            <span type="ellipsis">
+            <span type="ellipsis" style={{display: hashHistory.getCurrentLocation().pathname == '/homepage'? 'block' : 'none'}}>
               <img className="add" src={require(`./imgs/index-add.png`)} alt="icon"/>
             </span>
             </div>

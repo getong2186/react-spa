@@ -77,11 +77,10 @@ class Swa extends Component {
 
    // 用户item的点击事件
    swaListClick = (rowID) => {
-      console.log(rowID);
       hashHistory.push({
-        pathname: 'groups',
+        pathname: 'swaDetail',
         query: {
-            'fromPage' : 'home'
+            'id' : rowID
         }
       });
   }
@@ -101,7 +100,7 @@ class Swa extends Component {
                 <span>{app.name}</span>
               </div>
               <div className="setting">
-                <div v-show="!app.type" className="setting-not" onClick={this.swaListClick.bind(this, app.id)}>未配置</div>
+                <div className="setting-not" onClick={this.swaListClick.bind(this, app.id)}>未配置</div>
                 {/* <div v-show="app.type" className="setting-done">已配置</div> */}
               </div>
             </div>

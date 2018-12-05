@@ -6,6 +6,8 @@ export { default as LoginServer } from './Login/LoginServer'
 
 // 首页
 export { default as Homepage } from './Homepage'
+// 首页>搜索页
+export { default as HomepageSearch } from './Homepage/HomepageSearch'
 
 // 密码管家
 export { default as Swa } from './Swa'

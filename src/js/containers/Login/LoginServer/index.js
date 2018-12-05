@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
+import { Back } from '../../../components'
 
 // 逻辑和redux业务功能
 import * as TimerActions from 'app/actions/TimerActions'
@@ -30,29 +31,30 @@ class Login extends React.Component {
         })
 	}
 
+	handleClick = () => {
+		const path = `/`
+		hashHistory.push(path);
+	}
+
 	render() {
 		// const { state, actions } = this.props;
 		return (
 			<div className="login-server">
-				<span className="back">
-						返回
-				</span>
+				<Back/>
 				<header>
-					服务器设置
+					服务器配置
 				</header>
 				<div className="content">
-					<p>服务器地址：</p>
+					<p>请输入服务器地址，以http://或https://开头</p>
 					<InputItem
 						editable="{true}"
 						clear
-						placeholder="请输入邮箱 / 手机号"
 						value={this.state.server}
 						onChange={this.serverChangeHandle}
 					></InputItem>
 				</div>
-				
 				<div className="login-submit">
-					<Button type="primary" onClick={this.handleClick}>登录</Button>
+					<Button type="primary" onClick={this.handleClick}>确认</Button>
 				</div>
 			</div>
 		)

@@ -1,0 +1,73 @@
+:global {
+  .swa-detail {
+    .back {
+      color: #fff;
+    }
+    header {    
+      height: 50px;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      background: #2e43ff;
+      color: #fff;
+      font-size: 17px;
+      span: {
+        float: left;
+      }
+    }
+    .img-pack {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+    }
+
+    .content {
+      padding: 0 1.3288rem !important;
+  
+      .am-list-item.am-input-item:after {
+        display: none !important;
+      }
+      input {
+        height:26px;
+        font-size: 15px !important;
+
+      }
+      input::-webkit-input-placeholder {
+        font-size: 15px !important;
+        padding-left: 2px;
+        // line-height: 44px;
+      }
+      .am-input-clear {
+        width: 20px;
+        height: 20px;
+        background-size: 100% auto;
+      }
+      .am-input-control {
+        display: flex;
+        align-items: center;
+      }
+      .am-input-item {
+        min-height: 35px;
+        height: 35px;
+        padding: 0;
+        border-bottom: 1px #ccc solid;
+        margin: 15px 0;
+        background: #f5f5f7;
+      }
+      .am-input-focus {
+        border-bottom: 1px #A4C5FF solid;
+      }
+    }
+
+    .am-button {
+      height: 40px;
+      margin-top: 25px;
+      background-image:linear-gradient(90deg, #2e43ff 0%, #4da9ff 99%);
+      border: none;
+      font-size:16px;
+      line-height: 40px;
+      color: #ffffff;
+    }
+  }
+}

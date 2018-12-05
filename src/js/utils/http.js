@@ -4,7 +4,7 @@
 import axios from 'axios'
 import { Toast } from 'antd-mobile';
 // import _ from 'lodash'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 
 // let Base64 = require('js-base64').Base64;
 // let xss = require('xss');

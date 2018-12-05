@@ -3,7 +3,7 @@
 
 // Require Browsersync along with webpack and middleware for it
 import browserSync from 'browser-sync';
-// Required for react-router browserHistory
+// Required for react-router hashHistory
 // see https://github.com/BrowserSync/browser-sync/issues/204#issuecomment-102623643
 import historyApiFallback from 'connect-history-api-fallback';
 import webpack from 'webpack';

@@ -2,7 +2,7 @@ import React from 'react'
 // import 'react-fastclick'  // 这个需要放到react下方才行
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
 // import rootSage from './sagas'
@@ -12,9 +12,12 @@ const rootEl = document.getElementById('app');
 const store = configureStore()
 // store.runSaga(rootSage)
 
+const FastClick = require('../lib/fastclick/fastclick.js');
+FastClick.attach(document.body);
+
 render(
   <AppContainer errorReporter={Redbox}>
-    <Root store={store} history={browserHistory} />
+    <Root store={store} history={hashHistory} />
   </AppContainer>,
   rootEl
 )
@@ -40,7 +43,7 @@ if (module.hot) {
     const NextApp = require('./containers/Root').default;
     render(
       <AppContainer errorReporter={Redbox}>
-        <NextApp store={store} history={browserHistory} />
+        <NextApp store={store} history={hashHistory} />
       </AppContainer>,
       rootEl
     )

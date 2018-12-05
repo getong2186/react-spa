@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 
 // 逻辑和redux业务功能
 import * as TimerActions from 'app/actions/TimerActions'
 
 // 第三方组件和自己封装组件
-import { Button, InputItem } from 'antd-mobile';
-
+import { Button, InputItem, Toast } from 'antd-mobile';
+// import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
 // 样式
 import './index.scss'
 
@@ -22,26 +22,47 @@ class Login extends React.Component {
 		this.state = {
 			height: document.documentElement.clientHeight,
 			username: '',
-			password: ''
+			password: '',
+			btnDisabled: true
 		}
 	}
+	setBtnDisabled = () => {
+		let _this = this;
+		setTimeout(function() {
+			if (!_this.state.username || !_this.state.password) {
+				_this.setState({
+					btnDisabled: true
+				});
+			} else {
+				_this.setState({
+					btnDisabled: false
+				});
+			}
+		}, 0);
+	}
+
 	userNameChangeHandle = (value) => {
 		this.setState({
             username: value
-        })
+		})
+		this.setBtnDisabled();
 	}
+	
 	passwordChangeHandle = (value) => {
 		this.setState({
             password: value
-        })
-    }
+		})
+		this.setBtnDisabled();
+	}
+	
 	handleClick = () => {
 		const path = `/homepage`
-		browserHistory.push(path);
-
+		hashHistory.push(path);
+		// Toast.success('Load success !!!', 3);
 		// API.sayHelle();
 		// API.get_tbl_list().then(d => {
-			console.log(this.state);
+		
+		console.log(this.state);
 		// })
 		// console.log(API);
 	}
@@ -65,14 +86,15 @@ class Login extends React.Component {
 						editable="{true}"
 						clear
 						placeholder="请输入密码"
+						type="password"
 						value={this.state.password}
 						onChange={this.passwordChangeHandle}
 					></InputItem>
 				</div>			
 				<div className="login-submit">
-					<Button type="primary" onClick={this.handleClick}>登录</Button>
+					<Button type="primary" disabled={this.state.btnDisabled} onClick={this.handleClick}>登录</Button>
 					<p>
-						<a href="javascript:void(0);">手动设置服务器地址</a>
+						<a href="#/server">手动设置服务器地址</a>
 					</p>
 				</div>
 				<footer style={{top: (this.state.height - 40)+'px'}}>
