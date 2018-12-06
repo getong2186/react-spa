@@ -16,7 +16,9 @@ const showAlert = () => {
 		  console.log('取消');
 	  }, style: 'default' },
 	  { text: '确认', onPress: () => {
-		  console.log('确认');
+			console.log('确认');
+			const path = `/`
+			hashHistory.push(path);
 	  } },
 	]);
 	// setTimeout(() => {

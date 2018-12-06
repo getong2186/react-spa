@@ -37,7 +37,6 @@ class Login extends React.Component {
 	}
 
 	render() {
-		// const { state, actions } = this.props;
 		return (
 			<div className="login-server">
 				<Back/>

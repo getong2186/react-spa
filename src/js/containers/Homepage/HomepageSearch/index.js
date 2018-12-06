@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
+// import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { hashHistory } from 'react-router'
+// import { hashHistory } from 'react-router'
 import { Back } from '../../../components'
 
 // 逻辑和redux业务功能
-import * as TimerActions from 'app/actions/TimerActions'
+// import * as TimerActions from 'app/actions/TimerActions'
 
 // 第三方组件和自己封装组件
 import { Button, InputItem } from 'antd-mobile';
@@ -34,7 +34,6 @@ class Search extends React.Component {
 	}
 	
 	render() {
-		// const { state, actions } = this.props;
 		return (
 			<div className="homepage-search">
 				<Back/>
@@ -52,14 +51,6 @@ class Search extends React.Component {
 		)
 	}
 }
-
-// const mapStateToProps = state => ({
-// 	state: state.timer
-// })
-
-// const mapDispatchToProps = dispatch => ({
-// 	actions: bindActionCreators(TimerActions, dispatch)
-// })
 
 export default connect(
 )(Search)

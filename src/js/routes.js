@@ -43,7 +43,6 @@ export default (
       {/* 设备管理 */}
       <Route path="userDevice" component={UserDevice}/>
       
-      
       {/* 404 */}
       <Route path="*" component={NotFoundPage}/>
     </Route>

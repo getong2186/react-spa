@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { hashHistory } from 'react-router'
@@ -8,7 +8,6 @@ import * as TimerActions from 'app/actions/TimerActions'
 
 // 第三方组件和自己封装组件
 import { Button, InputItem, Toast } from 'antd-mobile';
-// import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
 // 样式
 import './index.scss'
 

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
+// import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Carousel, WingBlank } from 'antd-mobile';
-import styles from './index.scss';
+import './index.scss';
 
 import { Nav, Header, Counter } from '../../components'
-import * as CounterActions from '../../actions/CounterActions'
+// import * as CounterActions from '../../actions/CounterActions'
 
 class Homepage extends Component {
   state = {
@@ -140,7 +140,6 @@ class Homepage extends Component {
   ]
   }
   componentDidMount() {
-    // simulate img loading
     setTimeout(() => {
       this.setState({
         data: ['bg', 'bg', 'bg'],
@@ -149,7 +148,6 @@ class Homepage extends Component {
   }
 
   render() {
-    const { counter, dispatch, asyncBool, asyncCountDown } = this.props
     return (
       <div className="box">
         <Header />
@@ -196,7 +194,6 @@ class Homepage extends Component {
           {/* 占位符 */}
           <div style={{ height: "55px"}}></div>
         </div>
-        
         <Nav />
       </div>
     )
