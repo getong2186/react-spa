@@ -12,6 +12,7 @@ import {
   User,
   UserPersonalCenter,
   UserChangePassword,
+  UserDevice,
   NotFoundPage,
 } from './containers'
 
@@ -39,6 +40,8 @@ export default (
       <Route path="userPersonalCenter" component={UserPersonalCenter}/>
       {/* 修改密码 */}
       <Route path="userChangePassword" component={UserChangePassword}/>
+      {/* 设备管理 */}
+      <Route path="userDevice" component={UserDevice}/>
       
       
       {/* 404 */}

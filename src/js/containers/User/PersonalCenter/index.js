@@ -1,14 +1,30 @@
 import React, { Component } from 'react'
 import { Back } from '../../../components'
-import { List } from 'antd-mobile';
 import { hashHistory } from 'react-router'
 
-// 第三方组件和自己封装组件
-import { Button, InputItem, Toast } from 'antd-mobile';
+import { List, Modal, Button, Toast} from 'antd-mobile';
 
 import './index.scss';
 
 const Item = List.Item;
+
+const alert = Modal.alert;
+
+const showAlert = () => {
+	const alertInstance = alert('', '确认安全退出吗？', [
+	  { text: '取消', onPress: () => {
+		  console.log('取消');
+	  }, style: 'default' },
+	  { text: '确认', onPress: () => {
+		  console.log('确认');
+	  } },
+	]);
+	// setTimeout(() => {
+	//   // 可以调用close方法以在外部close
+	//   console.log('auto close');
+	//   alertInstance.close();
+	// }, 500000);
+  };
 
 export default class Detail extends Component {
 	handleClick = () => {
@@ -54,11 +70,19 @@ export default class Detail extends Component {
 					</List>
 
 					<List className="change-password">
-						<Item onClick={this.handleClick} extra={'>'}>修改密码</Item>
+						<Item arrow="horizontal" onClick={this.handleClick}>
+							<span>修改密码</span>
+						</Item>
 					</List>
 				</div>
 
-
+				<footer>
+					<List className="my-list signOut">
+						<Item onClick={showAlert}>
+						<span>退出当前账号</span>
+						</Item>
+					</List>
+				</footer>
 			</div>
     )
   }

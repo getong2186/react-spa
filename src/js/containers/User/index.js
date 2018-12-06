@@ -3,6 +3,9 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { hashHistory } from 'react-router'
 import './index.scss';
+import { List } from 'antd-mobile';
+
+const Item = List.Item;
 
 import { Nav, Header } from '../../components'
 
@@ -32,24 +35,16 @@ class User extends Component {
             </div>
         </div>
         <div className="user-card-pack">
-          <div className="card">
-            <div className="app">
-              <img src={require(`./imgs/app-1.png`)} alt=""/>
-              <span>项目管理</span>
-            </div>
-            <div className="setting">
-              <div className="setting-done"></div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="app">
-              <img src={require(`./imgs/app-1.png`)} alt=""/>
-              <span>项目管理</span>
-            </div>
-            <div className="setting">
-              <div className="setting-done"></div>
-            </div>
-          </div>
+          <List className="my-list">
+            <Item arrow="horizontal" onClick={() => {}}>
+              <img src={require(`./imgs/icon_mine_securit.png`)} alt=""/>
+              <span>安全设置</span>
+            </Item>
+            <Item arrow="horizontal" onClick={() => {const path = `/userDevice`; hashHistory.push(path);}}>
+              <img src={require(`./imgs/icon_mine_device.png`)} alt=""/>
+              <span>设备管理</span>
+            </Item>
+          </List>
         </div>
         <Nav/>
       </div>

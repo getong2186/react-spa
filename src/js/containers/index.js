@@ -20,6 +20,7 @@ export { default as User } from './User'
 export { default as UserPersonalCenter } from './User/PersonalCenter'
 // 修改密码
 export { default as UserChangePassword } from './User/ChangePassword'
+export { default as UserDevice } from './User/Device'
 
 // 404
 export { default as NotFoundPage } from './404.js'
