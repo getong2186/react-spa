@@ -88,19 +88,19 @@ class Swa extends Component {
   render() {
     const { counter, dispatch, asyncBool, asyncCountDown } = this.props
     return (
-      <div className="box relative">
+      <div className="swa">
         <Header />
         <div className="banner-pack">
         </div>
         <div className="swa-card-pack">
           {this.state.applist.map(app => (
-            <div className="card">
+            <div className="card" onClick={this.swaListClick.bind(this, app.id)}>
               <div className="app">
                 <img src={require(`./imgs/app-1.png`)} alt="" />
                 <span>{app.name}</span>
               </div>
               <div className="setting">
-                <div className="setting-not" onClick={this.swaListClick.bind(this, app.id)}>未配置</div>
+                <div className="setting-not">未配置</div>
                 {/* <div v-show="app.type" className="setting-done">已配置</div> */}
               </div>
             </div>

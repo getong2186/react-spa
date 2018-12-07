@@ -21,7 +21,10 @@ class Login extends React.Component {
 		this.state = {
 			height: document.documentElement.clientHeight,
 			username: '',
-			password: '',
+            password: '',
+            isshowPassword: false,
+            showPassword: require('./imgs/icon_login_showpassword.png'),
+            hidePassword: require('./imgs/icon_login_hidepassword.png'),
 			btnDisabled: true
 		}
 	}
@@ -66,6 +69,12 @@ class Login extends React.Component {
 		// console.log(API);
 	}
 
+    showPasswordClick = () => {
+        this.setState({
+            isshowPassword: !this.state.isshowPassword
+		})
+        console.log(11111);
+    }
 	render() {
 		return (
 			<div className="login">
@@ -80,15 +89,22 @@ class Login extends React.Component {
 						value={this.state.username}
 						onChange={this.userNameChangeHandle}
 					></InputItem>
-					<InputItem
-						className="inputItem"
-						editable="{true}"
-						clear
-						placeholder="请输入密码"
-						type="password"
-						value={this.state.password}
-						onChange={this.passwordChangeHandle}
-					></InputItem>
+                    <div className="password-pack">
+                        <InputItem
+                            className="inputItem"
+                            editable="{true}"
+                            // clear
+                            placeholder="请输入密码"
+                            type={this.state.isshowPassword? 'text': 'password'}
+                            value={this.state.password}
+                            onChange={this.passwordChangeHandle}
+                        >
+                        </InputItem>
+                        <a className="show-password" onClick={this.showPasswordClick}>
+                            <img src={this.state.isshowPassword? this.state.showPassword : this.state.hidePassword} alt="icon"/>
+                        </a>
+                    </div>
+					
 				</div>			
 				<div className="login-submit">
 					<Button type="primary" disabled={this.state.btnDisabled} onClick={this.handleClick}>登录</Button>

@@ -14,39 +14,38 @@ import * as TodoActions from '../../actions/TodoActions'
 class User extends Component {
   handleClick = () => {
     const path = `/userPersonalCenter`
-		hashHistory.push(path);
+    hashHistory.push(path);
   }
- 
+
   render() {
-    const { counter, dispatch, asyncBool, asyncCountDown } = this.props
     return (
       <div className="user">
         <Header />
         <div className="banner-pack">
         </div>
         <div className="person" onClick={this.handleClick}>
-            <img src={require(`./imgs/app-1.png`)} alt=""/>
-            <div className="message">
-              <h3>李文星</h3>
-              <p>
-                职位：
+          <img src={require(`./imgs/app-1.png`)} alt="" />
+          <div className="message">
+            <h3>李文星</h3>
+            <p>
+              职位：
                 <span>UI设计师</span>
-              </p>
-            </div>
+            </p>
+          </div>
         </div>
         <div className="user-card-pack">
           <List className="my-list">
-            <Item arrow="horizontal" onClick={() => {}}>
-              <img src={require(`./imgs/icon_mine_securit.png`)} alt=""/>
+            <Item arrow="horizontal" onClick={() => { }}>
+              <img src={require(`./imgs/icon_mine_securit.png`)} alt="" />
               <span>安全设置</span>
             </Item>
-            <Item arrow="horizontal" onClick={() => {const path = `/userDevice`; hashHistory.push(path);}}>
-              <img src={require(`./imgs/icon_mine_device.png`)} alt=""/>
+            <Item arrow="horizontal" onClick={() => { const path = `/userDevice`; hashHistory.push(path); }}>
+              <img src={require(`./imgs/icon_mine_device.png`)} alt="" />
               <span>设备管理</span>
             </Item>
           </List>
         </div>
-        <Nav/>
+        <Nav />
       </div>
     )
   }

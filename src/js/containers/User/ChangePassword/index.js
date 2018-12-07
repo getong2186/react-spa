@@ -41,32 +41,32 @@ export default class Detail extends Component {
   render() {
     return (
       	<div className="change-password">
-					<Back/>
-					<header>
-						修改密码
-					</header>
-					<div className="content">
-						<p>旧密码</p>
-						<InputItem
-								editable="{true}"
-								clear
-								placeholder="若包含字母，请注意区分大小写"
-								value={this.state.username}
-								onChange={this.userNameChangeHandle}
-							></InputItem>
-						<p>新密码</p>
-						<InputItem
-								editable="{true}"
-								clear
-								placeholder="8-16位，至少包含数字、字母、字符2种组合"
-								value={this.state.username}
-								onChange={this.userNameChangeHandle}
-							></InputItem>
-					</div>
-					<div className="submit-pack">
-						<Button type="primary" onClick={this.handleClick}>确认</Button>
-					</div>
-				</div>
+			<Back/>
+			<header>
+				修改密码
+			</header>
+			<div className="content">
+				<p>旧密码</p>
+				<InputItem
+						editable="{true}"
+						clear
+						placeholder="若包含字母，请注意区分大小写"
+						value={this.state.username}
+						onChange={this.userNameChangeHandle}
+					></InputItem>
+				<p>新密码</p>
+				<InputItem
+						editable="{true}"
+						clear
+						placeholder="8-16位，至少包含数字、字母、字符2种组合"
+						value={this.state.username}
+						onChange={this.userNameChangeHandle}
+					></InputItem>
+			</div>
+			<div className="submit-pack">
+				<Button type="primary" onClick={this.handleClick}>确认</Button>
+			</div>
+		</div>
     )
   }
 }

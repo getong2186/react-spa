@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { hashHistory } from 'react-router';
-import { Popover, NavBar, Icon } from 'antd-mobile';
+import { Popover, NavBar } from 'antd-mobile';
 import './index.scss';
 const Item = Popover.Item;
 
@@ -44,10 +44,9 @@ export default class Header extends React.Component {
     window.addEventListener('scroll', this.scrollHandler);
   }
   
-  handleScroll(event) {
+  handleScroll() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     var bannerElement = document.getElementById("banner");
-    // var tittleElement = document.getElementById("tittle");
     bannerElement.style.opacity = scrollTop/100;
     if (scrollTop > 100) {
       this.setState({

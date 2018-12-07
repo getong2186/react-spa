@@ -20,6 +20,7 @@ export { default as User } from './User'
 export { default as UserPersonalCenter } from './User/PersonalCenter'
 // 修改密码
 export { default as UserChangePassword } from './User/ChangePassword'
+// 设备管理
 export { default as UserDevice } from './User/Device'
 
 // 404
