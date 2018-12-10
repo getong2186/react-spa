@@ -1,10 +1,10 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { hashHistory } from 'react-router'
+// import { hashHistory } from 'react-router'
 
 // 逻辑和redux业务功能
-import * as TimerActions from 'app/actions/TimerActions'
+// import * as TimerActions from 'app/actions/TimerActions'
 
 // 第三方组件和自己封装组件
 import { Button, InputItem, Toast } from 'antd-mobile';
@@ -57,14 +57,14 @@ class Login extends React.Component {
 		this.setBtnDisabled();
 	}
 	
-	handleClick = () => {
-		const path = `/homepage`
-		hashHistory.push(path);
+	loginClick = () => {
+		// const path = `/homepage`
+		// hashHistory.push(path);
 		// Toast.success('Load success !!!', 3);
-		// API.sayHelle();
+		API.sayHelle(this.state.username, this.state.password);
 		// API.get_tbl_list().then(d => {
 		
-		console.log(this.state);
+		// console.log(this.state);
 		// })
 		// console.log(API);
 	}
@@ -73,7 +73,7 @@ class Login extends React.Component {
         this.setState({
             isshowPassword: !this.state.isshowPassword
 		})
-        console.log(11111);
+        // console.log(11111);
     }
 	render() {
 		return (
@@ -107,7 +107,7 @@ class Login extends React.Component {
 					
 				</div>			
 				<div className="login-submit">
-					<Button type="primary" disabled={this.state.btnDisabled} onClick={this.handleClick}>登录</Button>
+					<Button type="primary" disabled={this.state.btnDisabled} onClick={this.loginClick}>登录</Button>
 					<p>
 						<a href="#/server">手动设置服务器地址</a>
 					</p>
@@ -121,15 +121,15 @@ class Login extends React.Component {
 	}
 }
 
-const mapStateToProps = state => ({
-	state: state.timer
-})
+// const mapStateToProps = state => ({
+// 	state: state.timer
+// })
 
-const mapDispatchToProps = dispatch => ({
-	actions: bindActionCreators(TimerActions, dispatch)
-})
+// const mapDispatchToProps = dispatch => ({
+// 	actions: bindActionCreators(TimerActions, dispatch)
+// })
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+	// mapStateToProps,
+	// mapDispatchToProps
 )(Login)

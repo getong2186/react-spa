@@ -8,7 +8,7 @@ export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { visible: false, title: '首页', fontSize: '26px' };
+    this.state = { visible: false, title: '首页', fontSize: '26px' , scrollTop: null};
     switch(hashHistory.getCurrentLocation().pathname) {
       case '/homepage':
         this.state.title = '首页';
@@ -48,15 +48,9 @@ export default class Header extends React.Component {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     var bannerElement = document.getElementById("banner");
     bannerElement.style.opacity = scrollTop/100;
-    if (scrollTop > 100) {
-      this.setState({
-        fontSize: '16px'
+    this.setState({
+        scrollTop: scrollTop,
       });
-    } else {
-      this.setState({
-        fontSize: '26px'
-      });
-    }
   }
 
   render() {
@@ -107,7 +101,7 @@ export default class Header extends React.Component {
         }
       >
         <span style={{
-              fontSize: this.state.fontSize
+              fontSize: this.state.scrollTop > 100 ? '16px' : '26px'
             }}>{this.state.title}</span>
       </NavBar>
       {/* header 背景图  */}

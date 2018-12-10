@@ -1,4 +1,6 @@
 import ajax from '../../utils/http'
+import { hashHistory } from 'react-router'
+import { Toast } from 'antd-mobile';
 import qs from 'qs'
 
 const URL_GET_TBL_LIST = `/manager/gateway`
@@ -27,6 +29,19 @@ export default {
         })
     },
     sayHelle () {
-        console.log('say hello');
+        const path = `/homepage`
+        hashHistory.push(path);
+        
+        // Toast.success('Load success !!!', 3);
+        // window.redcore.login(getState().home.userName, getState().home.password, function (res) {
+        //     if (res.status === 200 && res.data) {
+        //         const path = `/homepage`
+		//         hashHistory.push(path);
+        //     } else {
+        //         Toast.success('Load success !!!', 3);
+        //     }
+        // });
+        
+        // console.log('say hello');
     }
 }

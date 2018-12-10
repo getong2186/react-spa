@@ -157,22 +157,23 @@ class Homepage extends Component {
                 infinite
                 autoplayInterval={3000}
               >
-                {this.state.data.map(val => (
+                {this.state.data.map((val, i) => (
                   <img
+                    key={i}
                     src={require(`./imgs/${val}.png`)}
                     alt="{{val}}"
                     style={{ width: '100%', verticalAlign: 'top' }}
                     onLoad={() => {
                       window.dispatchEvent(new Event('resize'));
-                      this.setState({ imgHeight: 'auto' });
+                    //   this.setState({ imgHeight: 'auto' });
                     }}
                   />
                 ))}
               </Carousel>
             </WingBlank>
             <div className="card-pack">
-              {this.state.grouplists.map(group => (
-                <div className="card">
+              {this.state.grouplists.map((group, i) => (
+                <div className="card" key={i}>
                   <h3>{group.name}</h3>
                   <div className="linkitems">
                     {group.applicationList.map(app => (
